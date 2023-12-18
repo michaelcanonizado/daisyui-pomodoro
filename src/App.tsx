@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC, ReactElement } from 'react';
 import { createHashRouter, RouterProvider, Navigate } from 'react-router-dom';
 
 import Timer from './pages/Timer';
@@ -17,8 +17,8 @@ const router = createHashRouter([
 	},
 ]);
 
-function App() {
+const App: FC = (): ReactElement => {
 	return <RouterProvider router={router} />;
-}
+};
 
 export default App;
