@@ -1,7 +1,11 @@
 import React from 'react';
 
 function App() {
-	return <h1 className="text-3xl font-bold">DaisyUI Pomodoro</h1>;
+	return (
+		<div>
+			<button className="btn">DaisyUI Pomodoro</button>
+		</div>
+	);
 }
 
 export default App;
