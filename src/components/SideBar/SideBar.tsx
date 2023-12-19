@@ -12,7 +12,7 @@ const SideBar: FC<IPropClassName> = (props): ReactElement => {
 	return (
 		<nav className={`flex-col border-r-base-300 border-2 ${className}`}>
 			<div className="w-full aspect-square grid place-items-center">
-				<Logo fontSize="1.5rem" />
+				<Logo fontSizeClass="text-[1.5rem]" />
 			</div>
 			<div className="h-full pb-14">
 				<SideBarLinks />

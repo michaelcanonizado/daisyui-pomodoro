@@ -20,7 +20,7 @@ const Navbar: FC<IPropClassName> = (props): ReactElement => {
 							<span className="text-xl">Sign Up</span>
 						</div>
 						<div className="">
-							<Logo fontSize="2rem" />
+							<Logo fontSizeClass="text-[1.5rem]" />
 						</div>
 						<div className="flex-none lg:hidden">
 							<label
