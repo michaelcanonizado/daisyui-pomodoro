@@ -6,7 +6,7 @@ import SkipIcon from './SkipIcon';
 
 const TimerButtons = () => {
 	return (
-		<div className="flex items-center gap-6">
+		<div className="flex items-center gap-6 absolute bottom-0 right-1/2 translate-x-[50%]">
 			<button className="btn btn-circle btn-sm p-1 border border-neutral">
 				<RestartIcon />
 			</button>
