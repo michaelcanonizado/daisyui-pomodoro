@@ -9,7 +9,7 @@ const ThemeSwitch: FC<IThemeSwitch> = (props): ReactElement => {
 	const { icon, text } = props;
 
 	return (
-		<button className="py-2 pr-4 pl-16 flex lg:mt-auto hover:bg-base-200 transition-colors">
+		<button className="py-2 pr-4 pl-16 flex lg:mt-auto hover:bg-base-200 transition-colors ease-linear">
 			<span className="mr-5">
 				<img className="w-8" src={icon} alt={text} />
 			</span>
