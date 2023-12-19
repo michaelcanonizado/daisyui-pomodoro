@@ -1,5 +1,9 @@
 import React, { FC, ReactElement } from 'react';
 
+import PlayIcon from './PlayIcon';
+import RestartIcon from './RestartIcon';
+import SkipIcon from './SkipIcon';
+
 const Timer: FC = (): ReactElement => {
 	return (
 		<main>
@@ -9,8 +13,14 @@ const Timer: FC = (): ReactElement => {
 			<section className="">
 				<div className=""></div>
 				<div className="">
-					<button className="btn btn-circle btn-outline">
-						<img src="./icons/play.svg" alt="start timer" />
+					<button className="btn btn-circle btn-outline btn-sm">
+						<RestartIcon />
+					</button>
+					<button className="btn btn-circle btn-outline btn-sm">
+						<PlayIcon />
+					</button>
+					<button className="btn btn-circle btn-outline btn-sm">
+						<SkipIcon />
 					</button>
 				</div>
 				<div className=""></div>
