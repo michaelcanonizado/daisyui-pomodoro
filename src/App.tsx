@@ -11,6 +11,8 @@ const router = createHashRouter([
 		element: <RootLayout />,
 		children: [
 			{ index: true, element: <Navigate to="/timer" /> },
+			// { path: 'timer', element: <Timer /> },
+			// { path: 'settings', element: <Settings /> },
 			{ path: 'timer', element: <Timer /> },
 			{ path: 'settings', element: <Settings /> },
 		],

@@ -3,6 +3,7 @@ import { Outlet } from 'react-router-dom';
 
 import Sidebar from '../components/Sidebar/Sidebar';
 import Navbar from '../components/Navbar/Navbar';
+import Footer from '../components/Main/Footer/Footer';
 
 const RootLayout: FC = (): ReactElement => {
 	return (
@@ -12,9 +13,10 @@ const RootLayout: FC = (): ReactElement => {
 		>
 			<Sidebar className="hidden lg:flex" id="sidebar-height-breakpoint" />
 			<Navbar className="flex lg:hidden" id="navbar-height-breakpoint" />
-			<main className="grow">
+			<div className="grow">
 				<Outlet />
-			</main>
+				<Footer />
+			</div>
 		</div>
 	);
 };
