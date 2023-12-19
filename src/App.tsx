@@ -1,8 +1,8 @@
 import React, { FC, ReactElement } from 'react';
 import { createHashRouter, RouterProvider, Navigate } from 'react-router-dom';
 
-import Timer from './pages/Timer';
-import Settings from './pages/Settings';
+import TimerPage from './pages/TimerPage';
+import SettingsPage from './pages/SettingsPage';
 import RootLayout from './pages/RootLayout';
 
 const router = createHashRouter([
@@ -13,8 +13,8 @@ const router = createHashRouter([
 			{ index: true, element: <Navigate to="/timer" /> },
 			// { path: 'timer', element: <Timer /> },
 			// { path: 'settings', element: <Settings /> },
-			{ path: 'timer', element: <Timer /> },
-			{ path: 'settings', element: <Settings /> },
+			{ path: 'timer', element: <TimerPage /> },
+			{ path: 'settings', element: <SettingsPage /> },
 		],
 	},
 ]);
