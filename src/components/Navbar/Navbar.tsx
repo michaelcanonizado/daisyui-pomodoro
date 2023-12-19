@@ -3,7 +3,7 @@ import React, { FC, ReactElement } from 'react';
 import { IPropClassName } from '../../interfaces/IPropClassName';
 
 import Logo from '../Logo';
-import SideBarLinks from '../SideBar/SideBarLinks';
+import SideBarLinks from '../Sidebar/SidebarLinks';
 
 interface INavbar extends IPropClassName {
 	id?: string;

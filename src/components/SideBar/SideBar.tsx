@@ -1,8 +1,8 @@
 import React, { FC, ReactElement } from 'react';
-import { Link } from 'react-router-dom';
-import SideBarLinks from './SideBarLinks';
 
-import { IPropClassName } from './../../interfaces/IPropClassName';
+import SidebarLinks from './SidebarLinks';
+
+import { IPropClassName } from '../../interfaces/IPropClassName';
 
 import Logo from '../Logo';
 
@@ -22,7 +22,7 @@ const SideBar: FC<ISideBar> = (props): ReactElement => {
 				<Logo fontSizeClass="text-[1.5rem]" />
 			</div>
 			<div className="h-full pb-14">
-				<SideBarLinks />
+				<SidebarLinks />
 			</div>
 		</nav>
 	);
