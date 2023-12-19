@@ -13,7 +13,7 @@ const Links: FC<INavLink> = (props): ReactElement => {
 
 	return (
 		<NavLink
-			className="py-2 pr-4 pl-16 flex hover:bg-base-200 transition-colors"
+			className="py-2 pl-20  flex hover:bg-base-200 transition-colors"
 			to={path}
 		>
 			<span className="mr-5">
