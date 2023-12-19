@@ -1,4 +1,3 @@
-export interface IClassNameProp {
+export interface IPropClassName {
 	className?: string;
-	lastLinkClassSelfFlex?: string;
 }

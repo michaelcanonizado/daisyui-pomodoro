@@ -2,9 +2,13 @@ import React, { FC, ReactElement } from 'react';
 import { Link } from 'react-router-dom';
 import SideBarLinks from './SideBarLinks';
 
-const SideBar: FC = (): ReactElement => {
+import { IPropClassName } from './../../interfaces/IPropClassName';
+
+const SideBar: FC<IPropClassName> = (props): ReactElement => {
+	const { className } = props;
+
 	return (
-		<nav className="flex flex-col w-72 border-r-base-300 border-2">
+		<nav className={`flex-col w-72 border-r-base-300 border-2 ${className}`}>
 			<div className="w-full aspect-square grid place-items-center">
 				<Link
 					to="https://daisyui.com/"
