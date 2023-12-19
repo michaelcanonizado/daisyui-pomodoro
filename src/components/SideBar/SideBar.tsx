@@ -4,31 +4,15 @@ import SideBarLinks from './SideBarLinks';
 
 import { IPropClassName } from './../../interfaces/IPropClassName';
 
+import Logo from './../Logo/Logo';
+
 const SideBar: FC<IPropClassName> = (props): ReactElement => {
 	const { className } = props;
 
 	return (
 		<nav className={`flex-col w-72 border-r-base-300 border-2 ${className}`}>
 			<div className="w-full aspect-square grid place-items-center">
-				<Link
-					to="https://daisyui.com/"
-					className="flex justify-center mr-2"
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					<div className="">
-						<img
-							className="w-8"
-							src="./icons/daisyui.svg"
-							alt="daisyUI Pomodoro"
-						/>
-					</div>
-					<div className="mt-[4px]">
-						<span className="text-2xl font-extrabold tracking-tight">
-							daisyUI Pomodoro
-						</span>
-					</div>
-				</Link>
+				<Logo fontSize="1.5rem" />
 			</div>
 			<div className="h-full pb-14">
 				<SideBarLinks />
