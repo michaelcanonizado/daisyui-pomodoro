@@ -1,5 +1,7 @@
 import React, { FC, ReactElement } from 'react';
 
+import { useCountdown } from '../../hooks/useCountdown';
+
 import TimerButtons from './TimerButtons';
 
 //global.d.ts
@@ -11,7 +13,25 @@ declare module 'react' {
 	}
 }
 
+interface IUserTimterSettings {
+	workDuration: number;
+	shortBreakDuration: number;
+	longBreakDuration: number;
+	rounds: number;
+}
+
+const settings: IUserTimterSettings = {
+	workDuration: 10,
+	shortBreakDuration: 30,
+	longBreakDuration: 45,
+	rounds: 4,
+};
+
 const Timer: FC = (): ReactElement => {
+	const time = useCountdown(settings.workDuration, () =>
+		console.log('Timer Done')
+	);
+
 	return (
 		<main className="grow shrink flex flex-col">
 			<div className="h-[50px]">
@@ -31,14 +51,17 @@ const Timer: FC = (): ReactElement => {
 					<div
 						className="radial-progress radial-square absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] font-bold text-3xl"
 						style={{
-							'--value': '70',
+							'--value':
+								((settings.workDuration - time) /
+									settings.workDuration) *
+								100,
 							'--size': '19.5rem',
 							'--thickness': '1.5rem',
 						}}
 						role="progressbar"
 						id="radial-progress"
 					>
-						70%
+						{time} seconds
 					</div>
 					<TimerButtons />
 				</div>
