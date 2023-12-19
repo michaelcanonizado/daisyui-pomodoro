@@ -29,13 +29,14 @@ const Timer: FC = (): ReactElement => {
 						role="progressbar"
 					></div>
 					<div
-						className="radial-progress absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%]"
+						className="radial-progress radial-square absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%]"
 						style={{
 							'--value': '70',
 							'--size': '12rem',
 							'--thickness': '1.5rem',
 						}}
 						role="progressbar"
+						id="radial-progress"
 					>
 						70%
 					</div>

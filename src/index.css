@@ -10,6 +10,13 @@
 	display: none;
 }
 
+.radial-square::after {
+	inset: unset;
+}
+.radial-square::before {
+	background: conic-gradient(currentColor calc(var(--value) * 1%), #0000 0);
+}
+
 @media (max-height: 550px) {
 	#sidebar-height-breakpoint {
 		display: none;
