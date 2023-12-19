@@ -18,21 +18,21 @@ const Timer: FC = (): ReactElement => {
 				<span className="">Sign In</span>
 			</div>
 			<section className="grow flex flex-col items-center justify-center">
-				<div className="h-[330px] w-[350px] relative">
+				<div className="h-[450px] w-[350px] relative">
 					<div
 						className="radial-progress text-base-200 absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%]"
 						style={{
 							'--value': '100',
-							'--size': '12rem',
+							'--size': '19.5rem',
 							'--thickness': '1.5rem',
 						}}
 						role="progressbar"
 					></div>
 					<div
-						className="radial-progress radial-square absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%]"
+						className="radial-progress radial-square absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] font-bold text-3xl"
 						style={{
 							'--value': '70',
-							'--size': '12rem',
+							'--size': '19.5rem',
 							'--thickness': '1.5rem',
 						}}
 						role="progressbar"
