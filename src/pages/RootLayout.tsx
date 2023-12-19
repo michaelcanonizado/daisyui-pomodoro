@@ -13,7 +13,7 @@ const RootLayout: FC = (): ReactElement => {
 		>
 			<Sidebar className="hidden lg:flex" id="sidebar-height-breakpoint" />
 			<Navbar className="flex lg:hidden" id="navbar-height-breakpoint" />
-			<div className="grow">
+			<div className="grow flex flex-col">
 				<Outlet />
 				<Footer />
 			</div>
