@@ -1,28 +1,15 @@
 import React, { FC, ReactElement } from 'react';
 
-import { NavLink } from 'react-router-dom';
+import Link from './Link';
+import ThemeSwitch from './ThemeSwitch';
 
-const SideBarLinks: FC = (props): ReactElement => {
+const SideBarLinks: FC = (): ReactElement => {
 	return (
-		<ul className="bg-red-400 flex flex-col h-full">
-			<li className="">
-				<NavLink className="" to="/">
-					<span className="">X</span>
-					<span className="">Timer</span>
-				</NavLink>
-			</li>
-			<li className="">
-				<NavLink className="" to="/">
-					<span className="">X</span>
-					<span className="">Settings</span>
-				</NavLink>
-			</li>
-			<li className="mt-[auto]">
-				<button className="">
-					<span className="">X</span>
-					<span className="">Light Mode</span>
-				</button>
-			</li>
+		<ul className="flex flex-col h-full font-medium">
+			<Link path="/timer" icon="./icons/timer.svg" text="Timer" />
+			<Link path="/settings" icon="./icons/settings.svg" text="Settings" />
+			<ThemeSwitch icon="./icons/sun.svg" text="Light mode" />
+			{/* <ThemeSwitch icon="./icons/moon.svg" text="Dark mode" /> */}
 		</ul>
 	);
 };

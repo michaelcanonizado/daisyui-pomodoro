@@ -4,11 +4,11 @@ import SideBarLinks from './SideBarLinks';
 
 const SideBar: FC = (): ReactElement => {
 	return (
-		<nav className="bg-base-200 flex flex-col">
-			<div className="w-full aspect-square bg-primary">
+		<nav className="flex flex-col w-64 border-r-base-300 border-2">
+			<div className="w-full aspect-square">
 				<Link to="/" />
 			</div>
-			<div className="h-full">
+			<div className="h-full pb-14">
 				<SideBarLinks />
 			</div>
 		</nav>
