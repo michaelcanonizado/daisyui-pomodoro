@@ -5,11 +5,15 @@ import { IPropClassName } from '../../interfaces/IPropClassName';
 import Logo from '../Logo';
 import SideBarLinks from '../SideBar/SideBarLinks';
 
-const Navbar: FC<IPropClassName> = (props): ReactElement => {
-	const { className } = props;
+interface INavbar extends IPropClassName {
+	id?: string;
+}
+
+const Navbar: FC<INavbar> = (props): ReactElement => {
+	const { className, id } = props;
 
 	return (
-		<nav className={`justify-center ${className}`}>
+		<nav className={`justify-center ${className}`} id={id}>
 			<div className="drawer drawer-end">
 				<input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
 				{/* Navbar Container */}
@@ -22,7 +26,7 @@ const Navbar: FC<IPropClassName> = (props): ReactElement => {
 						<div className="">
 							<Logo fontSizeClass="text-[1.5rem]" />
 						</div>
-						<div className="flex-none lg:hidden">
+						<div className="">
 							<label
 								htmlFor="my-drawer-3"
 								aria-label="open sidebar"

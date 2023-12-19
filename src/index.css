@@ -9,3 +9,18 @@
 .hide-scrollbar::-webkit-scrollbar {
 	display: none;
 }
+
+@media (max-height: 550px) {
+	#sidebar-height-breakpoint {
+		display: none;
+	}
+	#navbar-height-breakpoint {
+		display: flex;
+	}
+	#root-layout-breakpoint {
+		flex-direction: column;
+	}
+	#theme-switcher-breakpoint {
+		margin: 0;
+	}
+}
