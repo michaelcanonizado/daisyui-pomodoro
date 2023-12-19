@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { FC, ReactElement } from 'react';
 
-export default function Timer() {
+const Timer: FC = (): ReactElement => {
 	return <div>Timer</div>;
-}
+};
+
+export default Timer;

@@ -5,7 +5,7 @@ import SideBar from '../components/SideBar/SideBar';
 
 const RootLayout: FC = (): ReactElement => {
 	return (
-		<div className="">
+		<div className="h-screen flex">
 			<SideBar />
 			<main className="">
 				<Outlet />

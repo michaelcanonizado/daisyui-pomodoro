@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { FC, ReactElement } from 'react';
 
-export default function Settings() {
+const Settings: FC = (): ReactElement => {
 	return <div>Settings</div>;
-}
+};
+
+export default Settings;
