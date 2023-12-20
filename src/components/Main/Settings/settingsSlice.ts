@@ -8,9 +8,9 @@ type InitialState = {
 };
 
 const initialState: InitialState = {
-	workDuration: 20,
+	workDuration: 25,
 	shortBreakDuration: 5,
-	longBreakDuration: 25,
+	longBreakDuration: 15,
 	rounds: 4,
 };
 

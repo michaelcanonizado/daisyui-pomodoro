@@ -1,5 +1,6 @@
 import React, { FC, ReactElement } from 'react';
 
+import { useAppSelector } from '../../../app/hooks';
 import { useCountdown } from '../../hooks/useCountdown';
 
 //global.d.ts
@@ -11,21 +12,9 @@ declare module 'react' {
 	}
 }
 
-interface IUserTimterSettings {
-	workDuration: number;
-	shortBreakDuration: number;
-	longBreakDuration: number;
-	rounds: number;
-}
-
-const settings: IUserTimterSettings = {
-	workDuration: 10,
-	shortBreakDuration: 30,
-	longBreakDuration: 45,
-	rounds: 4,
-};
-
 const TimerRadialProgress: FC = (): ReactElement => {
+	const settings = useAppSelector((state) => state.settings);
+
 	const time = useCountdown(settings.workDuration, () =>
 		console.log('Timer Done')
 	);
