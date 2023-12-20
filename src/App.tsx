@@ -1,5 +1,8 @@
 import React, { FC, ReactElement } from 'react';
 import { createHashRouter, RouterProvider, Navigate } from 'react-router-dom';
+import { Provider } from 'react-redux';
+
+import store from './app/store';
 
 import TimerPage from './pages/TimerPage';
 import SettingsPage from './pages/SettingsPage';
@@ -20,7 +23,11 @@ const router = createHashRouter([
 ]);
 
 const App: FC = (): ReactElement => {
-	return <RouterProvider router={router} />;
+	return (
+		<Provider store={store}>
+			<RouterProvider router={router} />
+		</Provider>
+	);
 };
 
 export default App;
