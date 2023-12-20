@@ -11,9 +11,6 @@ const TimerButtons = () => {
 			<button className="btn btn-circle btn-sm p-1 border border-neutral">
 				<RestartIcon />
 			</button>
-			{/* <button className="btn btn-circle p-2 border border-neutral">
-				<PlayIcon />
-			</button> */}
 			<button className="btn btn-circle border border-neutral">
 				<label className="swap swap-rotate">
 					<input type="checkbox" />
