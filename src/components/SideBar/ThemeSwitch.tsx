@@ -3,6 +3,7 @@ import React, { FC, ReactElement } from 'react';
 import DownArrowIcon from './DownArrowIcon';
 
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
+import { themesAction } from './themeSlice';
 
 interface IThemeSwitch {
 	text: string;
@@ -11,10 +12,12 @@ interface IThemeSwitch {
 const ThemeSwitch: FC<IThemeSwitch> = (props): ReactElement => {
 	const { text } = props;
 
+	const dispatch = useAppDispatch();
 	const theme = useAppSelector((state) => state.theme);
 
 	const onChangeThemeHandler = (event: React.MouseEvent<HTMLElement>) => {
-		console.log(event.currentTarget.dataset.value);
+		const selectedTheme = event.currentTarget.dataset.value;
+		dispatch(themesAction.setTheme({ theme: selectedTheme }));
 	};
 
 	return (
