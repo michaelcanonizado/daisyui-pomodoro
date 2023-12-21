@@ -8,7 +8,7 @@ interface INavLink {
 	path: string;
 }
 
-const Links: FC<INavLink> = (props): ReactElement => {
+const Link: FC<INavLink> = (props): ReactElement => {
 	const { icon, text, path } = props;
 
 	return (
@@ -26,4 +26,4 @@ const Links: FC<INavLink> = (props): ReactElement => {
 	);
 };
 
-export default Links;
+export default Link;
