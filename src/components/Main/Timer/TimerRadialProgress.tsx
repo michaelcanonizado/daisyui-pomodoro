@@ -21,7 +21,7 @@ const TimerRadialProgress: FC = (): ReactElement => {
 	return (
 		<>
 			<div
-				className="radial-progress text-base-200 absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%]"
+				className="text-base-200 radial-progress absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%]"
 				style={{
 					'--value': '100',
 					'--size': '19.5rem',
@@ -30,7 +30,7 @@ const TimerRadialProgress: FC = (): ReactElement => {
 				role="progressbar"
 			></div>
 			<div
-				className="radial-progress radial-square absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] font-bold text-3xl"
+				className="text-accent radial-progress radial-square absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] font-bold text-3xl "
 				style={{
 					'--value':
 						((settings.workDuration - time) / settings.workDuration) *
@@ -41,7 +41,7 @@ const TimerRadialProgress: FC = (): ReactElement => {
 				role="progressbar"
 				id="radial-progress"
 			>
-				{time} seconds
+				<span className="text-neutral">{time} seconds</span>
 			</div>
 		</>
 	);
