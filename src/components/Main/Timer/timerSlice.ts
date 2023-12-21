@@ -13,7 +13,7 @@ type InitialState = {
 };
 
 const initialState: InitialState = {
-	currentTime: 50,
+	currentTime: 25,
 	isPaused: true,
 	isResetting: false,
 	settings: {

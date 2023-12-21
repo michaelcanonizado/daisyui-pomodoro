@@ -45,9 +45,10 @@ const ThemeSwitch: FC<IThemeSwitch> = (props): ReactElement => {
 						
 						w-[224px] h-[300px] overflow-y-scroll"
 					>
-						{theme.themes.map((theme) => {
+						{theme.themes.map((theme, index) => {
 							return (
 								<li
+									key={index}
 									onClick={onChangeThemeHandler}
 									data-value={theme}
 								>

@@ -1,5 +1,8 @@
 import { useState, useEffect } from 'react';
 
+import { useAppDispatch } from '../../app/hooks';
+import { timerAction } from '../Main/Timer/timerSlice';
+
 /**
  *
  * @param initialTime initial countdown in seconds
@@ -8,6 +11,8 @@ import { useState, useEffect } from 'react';
  */
 
 export const useTimer = (initialTime: number, isPaused: boolean) => {
+	const dispatch = useAppDispatch();
+
 	const [time, setTime] = useState(initialTime);
 
 	useEffect(() => {
