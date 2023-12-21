@@ -42,7 +42,7 @@ const TimerRadialProgress: FC = (): ReactElement => {
 				role="progressbar"
 				id="radial-progress"
 			>
-				<span className="text-neutral-content">{time} seconds</span>
+				<span className="text-base-content">{time} seconds</span>
 			</div>
 		</>
 	);
