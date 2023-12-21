@@ -1,6 +1,6 @@
 import { FC, ReactElement } from 'react';
 
-import { useAppSelector, useAppDispatch } from '../../../app/hooks';
+import { useAppSelector } from '../../../app/hooks';
 import { useTimer } from '../../hooks/useTimer';
 
 //global.d.ts
