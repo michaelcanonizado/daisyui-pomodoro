@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 
 import PlayIcon from './PlayIcon';
 import PauseIcon from './PauseIcon';
@@ -10,6 +10,7 @@ import { timerAction } from './timerSlice';
 
 const TimerButtons = () => {
 	const dispatch = useAppDispatch();
+	const checkboxRef = useRef<HTMLInputElement>(null);
 
 	const timer = useAppSelector((state) => state.timer);
 
@@ -18,6 +19,10 @@ const TimerButtons = () => {
 	};
 
 	const onToggleTimerResetHandler = () => {
+		if (checkboxRef.current) {
+			checkboxRef.current.checked = false;
+		}
+
 		dispatch(timerAction.resetTimer({ time: timer.settings.workDuration }));
 	};
 
@@ -31,7 +36,11 @@ const TimerButtons = () => {
 			</button>
 			<button className="btn btn-circle border border-neutral">
 				<label className="swap swap-rotate">
-					<input type="checkbox" onClick={onToggleTimerPlayHandler} />
+					<input
+						type="checkbox"
+						onClick={onToggleTimerPlayHandler}
+						ref={checkboxRef}
+					/>
 					<PauseIcon className="swap-on fill-current w-8 h-8" />
 					<PlayIcon className="swap-off fill-current w-8 h-8" />
 				</label>
