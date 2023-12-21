@@ -21,7 +21,7 @@
 
 /* custom class to center dropdown */
 .dropdown-center .dropdown-content {
-	inset-inline: -30%;
+	inset-inline: -35%;
 }
 
 @media (max-height: 550px) {

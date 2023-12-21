@@ -14,7 +14,7 @@ const SideBarLinks: FC<IPropClassName> = (props): ReactElement => {
 		>
 			<Link path="/timer" icon="./icons/timer.svg" text="Timer" />
 			<Link path="/settings" icon="./icons/settings.svg" text="Settings" />
-			<ThemeSwitch icon="./icons/sun.svg" text="Theme" />
+			<ThemeSwitch text="Theme" />
 		</ul>
 	);
 };
