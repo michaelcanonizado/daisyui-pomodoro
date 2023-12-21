@@ -1,31 +1,34 @@
 import { useState, useEffect } from 'react';
 
-import { useAppDispatch } from '../../app/hooks';
+import { useAppDispatch, useAppSelector } from '../../app/hooks';
 import { timerAction } from '../Main/Timer/timerSlice';
 
 /**
  *
  * @param initialTime initial countdown in seconds
- * @param isPaused boolean timer state, if timer is paused or not
- * @returns
+ * @returns the remaining time
  */
 
-export const useTimer = (initialTime: number, isPaused: boolean) => {
+export const useTimer = (initialTime: number) => {
 	const dispatch = useAppDispatch();
-
-	const [time, setTime] = useState(initialTime);
+	const isTimerRunning = useAppSelector((state) => state.timer.isRunning);
+	const timerValue = useAppSelector((state) => state.timer.currentTime);
 
 	useEffect(() => {
 		let interval: ReturnType<typeof setInterval>;
 
-		if (!isPaused && time > 0) {
+		if (isTimerRunning) {
 			interval = setInterval(() => {
-				setTime((prevTime) => prevTime - 1);
+				dispatch(timerAction.decrementTime());
 			}, 1000);
 		}
 
-		return () => clearInterval(interval);
-	}, [time, isPaused]);
+		return () => {
+			clearInterval(interval);
+		};
+	}, [timerValue, isTimerRunning, dispatch]);
 
-	return time;
+	return {
+		time: timerValue,
+	};
 };

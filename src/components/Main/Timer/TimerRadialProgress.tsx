@@ -1,7 +1,8 @@
 import React, { FC, ReactElement } from 'react';
 
-import { useAppSelector } from '../../../app/hooks';
+import { useAppSelector, useAppDispatch } from '../../../app/hooks';
 import { useTimer } from '../../hooks/useTimer';
+import { timerAction } from './timerSlice';
 
 //global.d.ts
 declare module 'react' {
@@ -15,7 +16,7 @@ declare module 'react' {
 const TimerRadialProgress: FC = (): ReactElement => {
 	const timer = useAppSelector((state) => state.timer);
 
-	const time = useTimer(timer.settings.workDuration, timer.isPaused);
+	const { time } = useTimer(timer.settings.workDuration);
 
 	return (
 		<>

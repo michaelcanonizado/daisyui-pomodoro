@@ -5,18 +5,20 @@ import PauseIcon from './PauseIcon';
 import RestartIcon from './RestartIcon';
 import SkipIcon from './SkipIcon';
 
-import { useAppDispatch } from '../../../app/hooks';
+import { useAppDispatch, useAppSelector } from '../../../app/hooks';
 import { timerAction } from './timerSlice';
 
 const TimerButtons = () => {
 	const dispatch = useAppDispatch();
+
+	const timer = useAppSelector((state) => state.timer);
 
 	const onToggleTimerPlayHandler = () => {
 		dispatch(timerAction.toggleTimer());
 	};
 
 	const onToggleTimerResetHandler = () => {
-		dispatch(timerAction.resetTimer());
+		dispatch(timerAction.resetTimer({ time: timer.settings.workDuration }));
 	};
 
 	return (

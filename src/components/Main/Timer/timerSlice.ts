@@ -1,9 +1,10 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { stat } from 'fs/promises';
 
 type InitialState = {
 	currentTime: number;
 	isPaused: boolean;
-	isResetting: boolean;
+	isRunning: boolean;
 	settings: {
 		workDuration: number;
 		shortBreakDuration: number;
@@ -15,7 +16,7 @@ type InitialState = {
 const initialState: InitialState = {
 	currentTime: 25,
 	isPaused: true,
-	isResetting: false,
+	isRunning: false,
 	settings: {
 		workDuration: 25,
 		shortBreakDuration: 5,
@@ -28,11 +29,18 @@ const timerSlice = createSlice({
 	name: 'timerButtons',
 	initialState,
 	reducers: {
-		toggleTimer(state) {
-			state.isPaused = !state.isPaused;
+		setTime(state, action: PayloadAction<{ time: number }>) {
+			state.currentTime = action.payload.time;
 		},
-		resetTimer(state) {
-			state.isResetting = !state.isResetting;
+		decrementTime(state) {
+			state.currentTime = state.currentTime - 1;
+		},
+		toggleTimer(state) {
+			state.isRunning = !state.isRunning;
+		},
+		resetTimer(state, action: PayloadAction<{ time: number }>) {
+			state.isRunning = false;
+			state.currentTime = action.payload.time;
 		},
 	},
 });
