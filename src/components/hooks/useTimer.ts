@@ -18,7 +18,6 @@ export const useTimer = (initialTime: number, isPaused: boolean) => {
 				setTime((prevTime) => prevTime - 1);
 			}, 1000);
 		}
-		console.log(time);
 
 		return () => clearInterval(interval);
 	}, [time, isPaused]);

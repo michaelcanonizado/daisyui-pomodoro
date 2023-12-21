@@ -1,17 +1,27 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import { useAppSelector } from '../../../app/hooks';
-
-import { useTimer } from '../../hooks/useTimer';
-
 type InitialState = {
+	currentTime: number;
 	isPaused: boolean;
 	isResetting: boolean;
+	settings: {
+		workDuration: number;
+		shortBreakDuration: number;
+		longBreakDuration: number;
+		rounds: number;
+	};
 };
 
 const initialState: InitialState = {
+	currentTime: 50,
 	isPaused: true,
 	isResetting: false,
+	settings: {
+		workDuration: 25,
+		shortBreakDuration: 5,
+		longBreakDuration: 15,
+		rounds: 4,
+	},
 };
 
 const timerSlice = createSlice({

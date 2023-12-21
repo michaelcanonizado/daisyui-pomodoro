@@ -13,10 +13,9 @@ declare module 'react' {
 }
 
 const TimerRadialProgress: FC = (): ReactElement => {
-	const settings = useAppSelector((state) => state.settings);
-	const timerState = useAppSelector((state) => state.timer);
+	const timer = useAppSelector((state) => state.timer);
 
-	let time = 50;
+	const time = useTimer(timer.settings.workDuration, timer.isPaused);
 
 	return (
 		<>
@@ -33,7 +32,8 @@ const TimerRadialProgress: FC = (): ReactElement => {
 				className="text-accent radial-progress radial-square absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] font-bold text-3xl "
 				style={{
 					'--value':
-						((settings.workDuration - time) / settings.workDuration) *
+						((timer.settings.workDuration - time) /
+							timer.settings.workDuration) *
 						100,
 					'--size': '19.5rem',
 					'--thickness': '1.5rem',

@@ -6,17 +6,17 @@ import RestartIcon from './RestartIcon';
 import SkipIcon from './SkipIcon';
 
 import { useAppDispatch } from '../../../app/hooks';
-import { timerButtonsAction } from './timerSlice';
+import { timerAction } from './timerSlice';
 
 const TimerButtons = () => {
 	const dispatch = useAppDispatch();
 
 	const onToggleTimerPlayHandler = () => {
-		dispatch(timerButtonsAction.toggleTimer());
+		dispatch(timerAction.toggleTimer());
 	};
 
 	const onToggleTimerResetHandler = () => {
-		dispatch(timerButtonsAction.resetTimer());
+		dispatch(timerAction.resetTimer());
 	};
 
 	return (
