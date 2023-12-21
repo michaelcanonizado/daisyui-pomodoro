@@ -1,7 +1,7 @@
 import React, { FC, ReactElement } from 'react';
 
 import { useAppSelector } from '../../../app/hooks';
-import { useCountdown } from '../../hooks/useCountdown';
+import { useTimer } from '../../hooks/useTimer';
 
 //global.d.ts
 declare module 'react' {
@@ -14,10 +14,9 @@ declare module 'react' {
 
 const TimerRadialProgress: FC = (): ReactElement => {
 	const settings = useAppSelector((state) => state.settings);
+	const timerState = useAppSelector((state) => state.timer);
 
-	const time = useCountdown(settings.workDuration, () =>
-		console.log('Timer Done')
-	);
+	const time = useTimer(settings.workDuration, timerState.isPaused);
 
 	return (
 		<>

@@ -1,5 +1,8 @@
 import { useState, useEffect } from 'react';
 
+import { useAppSelector } from '../../app/hooks';
+import TimerButtons from '../Main/Timer/TimerButtons';
+
 /**
  *
  * @param initialTime initial countdown in seconds
@@ -7,12 +10,16 @@ import { useState, useEffect } from 'react';
  * @returns
  */
 
-export const useCountdown = (initialTime: number, callback?: () => void) => {
+export const useCountdown = (
+	initialTime: number,
+	isPaused: boolean,
+	callback?: () => void
+) => {
 	const [time, setTime] = useState(initialTime);
 
 	useEffect(() => {
 		const interval = setInterval(() => {
-			if (time > 0) {
+			if (time > 0 && !isPaused) {
 				setTime((prevTime) => {
 					return prevTime - 1;
 				});
