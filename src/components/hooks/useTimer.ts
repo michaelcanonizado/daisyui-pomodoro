@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
 import { timerAction } from '../Main/Timer/timerSlice';

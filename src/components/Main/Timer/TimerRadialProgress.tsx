@@ -1,8 +1,7 @@
-import React, { FC, ReactElement } from 'react';
+import { FC, ReactElement } from 'react';
 
 import { useAppSelector, useAppDispatch } from '../../../app/hooks';
 import { useTimer } from '../../hooks/useTimer';
-import { timerAction } from './timerSlice';
 
 //global.d.ts
 declare module 'react' {
