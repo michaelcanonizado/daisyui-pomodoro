@@ -16,7 +16,7 @@ const TimerRadialProgress: FC = (): ReactElement => {
 	const settings = useAppSelector((state) => state.settings);
 	const timerState = useAppSelector((state) => state.timer);
 
-	const time = useTimer(settings.workDuration, timerState.isPaused);
+	let time = 50;
 
 	return (
 		<>
